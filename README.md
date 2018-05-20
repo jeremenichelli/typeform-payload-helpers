@@ -1,5 +1,7 @@
 # typeform-payload-helpers
 
+[![Build Status](https://travis-ci.org/jeremenichelli/typeform-payload-helpers.svg?branch=master)](https://travis-ci.org/jeremenichelli/typeform-payload-helpers)
+
 Helper functions to crawl form payload responses data from Typeform.
 
 _This library is in beta since it needs stronger tests around different Typeform block types._
