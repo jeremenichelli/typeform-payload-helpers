@@ -92,7 +92,7 @@ yarn add typeform-payload-helpers
 Given a `ref` string and an object containing the form `definition`, return the corresponding field `id`.
 
 ```js
-import { getIdFromRef } from 'typeform-payload-helpers;
+import { getIdFromRef } from 'typeform-payload-helpers';
 
 getIdFromRef('first_name', payload);
 // returns 'JwWggjAKtOkA'
@@ -103,7 +103,7 @@ getIdFromRef('first_name', payload);
 Given an `id` and an object containing the form `definition` and an `answers` array, return the corresponding answer object for that `id`.
 
 ```js
-import { getAnswerFromId } from 'typeform-payload-helpers;
+import { getAnswerFromId } from 'typeform-payload-helpers';
 
 getAnswerFromId('JwWggjAKtOkA', payload);
 
@@ -122,7 +122,7 @@ getAnswerFromId('JwWggjAKtOkA', payload);
 Given an `answer` object return the corresponding response value.
 
 ```js
-import { getAnswerValue } from 'typeform-payload-helpers;
+import { getAnswerValue } from 'typeform-payload-helpers';
 
 const answer = {
   type: 'text',
@@ -142,7 +142,7 @@ getAnswerValue(answer);
 This method groups all of the method from above and, given a `ref` string and a payload object containing both the `definition` and the `answers` array, return the value of the corresponding answer.
 
 ```js
-import { getAnswerValueFromRef } from 'typeform-payload-helpers;
+import { getAnswerValueFromRef } from 'typeform-payload-helpers';
 
 getAnswerValueFromRef('first_name', payload);
 // 'Laura'
