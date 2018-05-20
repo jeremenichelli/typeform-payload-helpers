@@ -1,6 +1,6 @@
 {
   "name": "typeform-payload-helpers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper functions to crawl form payload responses data from Typeform",
   "main": "dist/typeform-payload-helpers.js",
   "browser": "dist/typeform-payload-helpers.umd.js",
