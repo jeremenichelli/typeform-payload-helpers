@@ -91,7 +91,7 @@ yarn add typeform-payload-helpers
 
 ### `getIdFromRef`
 
-Given a `ref` string and an object containing the form `definition`, return the corresponding field `id`.
+Given a `ref` string and an object containing the form `definition` returns the corresponding field `id`.
 
 ```js
 import { getIdFromRef } from 'typeform-payload-helpers';
@@ -102,7 +102,7 @@ getIdFromRef('first_name', payload);
 
 ### `getAnswerFromId`
 
-Given an `id` and an object containing the form `definition` and an `answers` array, return the corresponding answer object for that `id`.
+Given an `id` and an object containing the form `definition` and an `answers` array returns the corresponding answer block.
 
 ```js
 import { getAnswerFromId } from 'typeform-payload-helpers';
@@ -121,7 +121,7 @@ getAnswerFromId('JwWggjAKtOkA', payload);
 
 ### `getAnswerValue`
 
-Given an `answer` object return the corresponding response value.
+Given an `answer` object returns the corresponding response value.
 
 ```js
 import { getAnswerValue } from 'typeform-payload-helpers';
@@ -141,13 +141,27 @@ getAnswerValue(answer);
 
 ### `getAnswerValueFromRef`
 
-This method groups all of the method from above and, given a `ref` string and a payload object containing both the `definition` and the `answers` array, return the value of the corresponding answer.
+This method groups all helpers from above and, given a `ref` string and a payload object containing both the `definition` and the `answers` array, returns the value of the corresponding answer.
 
 ```js
 import { getAnswerValueFromRef } from 'typeform-payload-helpers';
 
 getAnswerValueFromRef('first_name', payload);
 // 'Laura'
+```
+
+#### About the payload parameter
+
+Notice that all **payload** parameters have the same structure as an object received from a Webhooks post. You can see [an example on the platform's documentation](https://developer.typeform.com/webhooks/example-payload/).
+
+If you have a form definition stored in other format pass it inside an object.
+
+```js
+import { getIdFromRef } from 'typeform-payload-helpers';
+import customFormDefinition from './custom-form-definition.js'
+
+// pass the object with the 'definition' property name
+getIdFromRef('some_custom_ref', { definition: customFormDefinition });
 ```
 
 ## Contributing
@@ -164,3 +178,9 @@ _Update or add tests if necessary._
 - Submit a PR 🎉
 
 _You can do `yarn test --watch` when working on TDD mode._
+
+### TODO
+
+- Add stronger tests against more complex blocks.
+- Add useful links to documentation.
+- Add linting and precommit hooks.
