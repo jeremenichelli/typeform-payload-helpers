@@ -1,6 +1,6 @@
 {
   "name": "typeform-payload-helpers",
-  "version": "0.0.2",
+  "version": "0.0.0-semantic-release",
   "description": "Helper functions to crawl form payload responses data from Typeform",
   "main": "dist/typeform-payload-helpers.js",
   "browser": "dist/typeform-payload-helpers.umd.js",
@@ -9,8 +9,14 @@
     "test": "ava test/typeform-payload-helpers.test.js --verbose",
     "prebuild": "npm test",
     "start": "microbundle watch",
-    "build": "microbundle"
+    "build": "microbundle",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeremenichelli/typeform-payload-helpers.git"
@@ -33,7 +39,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
-    "microbundle": "^0.4.4"
+    "microbundle": "^0.4.4",
+    "semantic-release": "^15.9.9",
+    "travis-deploy-once": "^5.0.2"
   },
   "ava": {
     "require": [
