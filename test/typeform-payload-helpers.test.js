@@ -71,7 +71,24 @@ test('getAnswerValue returns correct answer value', t => {
   t.is(value, 'Laura');
 });
 
-test('getAnswerValueFormRef returns correct answer value', t => {
+test('getAnswerValueFromRef returns correct answer value', t => {
   const value = helpers.getAnswerValueFromRef('readable_ref_email', mockedFormObject);
   t.is(value, 'laura@example.com');
+});
+
+test('getAnswerValueFromRef returns correct dropdown answer', t => {
+  const value = helpers.getAnswerValueFromRef('readable_ref_place', mockedFormObject);
+  t.is(value, 'Barcelona');
+});
+
+test('getAnswerValueFromRef returns correct multiple choice answer', t => {
+  const value = helpers.getAnswerValueFromRef('readable_ref_technologies', mockedFormObject);
+  t.deepEqual(
+    value,
+    [
+      "Vue",
+      "React",
+      "CSS"
+    ]
+  )
 });
