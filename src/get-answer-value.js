@@ -4,10 +4,10 @@ const getAnswerValue = (answer) => {
 
   if (type === 'choices')
     return value.labels
-  
+
   if (type === 'choice')
     return value.label
-  
+
   return value
 }
 
