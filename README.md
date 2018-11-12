@@ -17,7 +17,7 @@ _This library is in beta since it needs stronger tests around different Typeform
   - [`getIdFromRef`](#getidfromref)
   - [`getAnswerFromId`](#getanswerfromid)
   - [`getAnswerValue`](#getanswervalue)
-    - [About the payload parameter](#about-the-payload-parameter)
+- [About the payload parameter](#about-the-payload-parameter)
 - [Contributing](#contributing)
 
 ## Motivations
@@ -167,7 +167,7 @@ getAnswerValue(answer);
 // 'Laura'
 ```
 
-#### About the payload parameter
+## About the payload parameter
 
 Notice that all **payload** parameters have the same structure as an object received from a Webhooks post. You can see [an example on the platform's documentation](https://developer.typeform.com/webhooks/example-payload/).
 
