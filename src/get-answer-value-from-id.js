@@ -1,10 +1,11 @@
 import getAnswerValue from './get-answer-value';
+import getAnswerFromId from './get-answer-from-id';
 
 const getAnswerValueFromId = (id, payload) => {
   let value
 
   try {
-    const answer = payload.answers.find(answer => answer.field.id === id);
+    const answer = getAnswerFromId(id, payload);
     value = getAnswerValue(answer);
   } catch (e) {
     console.log(`typeform helpers: couldn't get answer value with id ${id}`)
