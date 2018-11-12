@@ -8,14 +8,16 @@ _This library is in beta since it needs stronger tests around different Typeform
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
 - [Motivations](#motivations)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Main helpers](#main-helpers)
+  - [`getAnswerValueFromRef`](#getanswervaluefromref)
+  - [`getAnswerValueFromId`](#getanswervaluefromid)
+- [Extended helpers](#extended-helpers)
   - [`getIdFromRef`](#getidfromref)
   - [`getAnswerFromId`](#getanswerfromid)
   - [`getAnswerValue`](#getanswervalue)
-  - [`getAnswerValueFromRef`](#getanswervaluefromref)
+    - [About the payload parameter](#about-the-payload-parameter)
 - [Contributing](#contributing)
 
 ## Motivations
@@ -87,7 +89,33 @@ npm i typeform-payload-helpers --save
 yarn add typeform-payload-helpers
 ```
 
-## Usage
+## Main helpers
+
+### `getAnswerValueFromRef`
+
+Given a `ref` string and a payload object containing both the `definition` and the `answers` arrays, returns the value of the corresponding answer.
+
+```js
+import { getAnswerValueFromRef } from 'typeform-payload-helpers';
+
+getAnswerValueFromRef('first_name', payload);
+// 'Phoebe'
+```
+
+### `getAnswerValueFromId`
+
+In case you rely on an `id` mapping instead of refs, you can use this method. Given an `id` string and a payload object containing both the `definition` and the `answers` arrays, returns the value of the corresponding answer.
+
+```js
+import { getAnswerValueFromRef } from 'typeform-payload-helpers';
+
+getAnswerValueFromRef('JjpjdSGicVx1', payload);
+// 'Phoebe'
+```
+
+## Extended helpers
+
+Though these methods are used internally by `getAnswerValueFromRef` and `getAnswerValueFromId` to get answer values, they are available in case a developer finds them useful.
 
 ### `getIdFromRef`
 
@@ -139,17 +167,6 @@ getAnswerValue(answer);
 // 'Laura'
 ```
 
-### `getAnswerValueFromRef`
-
-This method groups all helpers from above and, given a `ref` string and a payload object containing both the `definition` and the `answers` array, returns the value of the corresponding answer.
-
-```js
-import { getAnswerValueFromRef } from 'typeform-payload-helpers';
-
-getAnswerValueFromRef('first_name', payload);
-// 'Laura'
-```
-
 #### About the payload parameter
 
 Notice that all **payload** parameters have the same structure as an object received from a Webhooks post. You can see [an example on the platform's documentation](https://developer.typeform.com/webhooks/example-payload/).
@@ -177,10 +194,8 @@ _Update or add tests if necessary._
 - Run `yarn test` to make sure there's no regression.
 - Submit a PR 🎉
 
-_You can do `yarn test --watch` when working on TDD mode._
+-You can do `yarn test --watch` when working on TDD mode.
 
 ### TODO
 
-- Add stronger tests against more complex blocks.
-- Add useful links to documentation.
 - Add linting and precommit hooks.
