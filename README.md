@@ -107,9 +107,9 @@ getAnswerValueFromRef('first_name', payload);
 In case you rely on an `id` mapping instead of refs, you can use this method. Given an `id` string and a payload object containing both the `definition` and the `answers` arrays, returns the value of the corresponding answer.
 
 ```js
-import { getAnswerValueFromRef } from 'typeform-payload-helpers';
+import { getAnswerValueFromId } from 'typeform-payload-helpers';
 
-getAnswerValueFromRef('JjpjdSGicVx1', payload);
+getAnswerValueFromId('JjpjdSGicVx1', payload);
 // 'Phoebe'
 ```
 
