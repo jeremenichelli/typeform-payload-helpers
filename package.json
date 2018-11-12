@@ -6,7 +6,7 @@
   "browser": "dist/typeform-payload-helpers.umd.js",
   "module": "dist/typeform-payload-helpers.esm.js",
   "scripts": {
-    "test": "ava test/typeform-payload-helpers.test.js --verbose",
+    "test": "ava test/**.test.js",
     "prebuild": "npm test",
     "start": "microbundle watch",
     "build": "microbundle",
